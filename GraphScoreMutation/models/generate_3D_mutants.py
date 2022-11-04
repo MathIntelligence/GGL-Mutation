@@ -18,7 +18,7 @@ class do_S1131():
     cutoff = 12.0
 
     def read_csv(self):
-        df = pd.read_csv(self.csv_path)
+        df = pd.read_csv(self.csv_path, dtype={'protein':str})
         pdbids = df['protein']
         mutations = df['mutation']
         ddGs = df['DDG']
@@ -45,15 +45,8 @@ class do_S1131():
         self.read_csv()        
         data = _gen_3D.gen_3D(self.name, self.mutants, 
                               self.wildtype_path, self.output_path, self.cutoff)
-        # data.gen_3D_all(n_jobs)
+        data.gen_3D_all(n_jobs)
         data.get_labels()
-        
-    
-    # def get_labels(self):
-    #     data = _gen_3D.gen_3D(self.name, self.mutants, 
-    #                           self.wildtype_path, self.output_path, self.cutoff)
-    #     data.get_labels()
-
 
     
 def main(data_name='S1131', n_jobs=1):
