@@ -12,9 +12,8 @@ Date last modified:
 """
 
 import sys
-import os
-import pandas as pd
-from itertools import product
+# import pandas as pd
+# from itertools import product
 import ntpath
 import argparse
 import time
@@ -34,8 +33,8 @@ class GGLMutationFeatures:
         self.data_folder = args.data_folder
         self.feature_folder = args.feature_folder
 
-    def get_mutation_info(self, mutation):
-
+    @staticmethod
+    def get_mutation_info(mutation):
         chain = mutation[1]
         wildtype = mutation[2][0]
         mutanttype = mutation[2][-1]
