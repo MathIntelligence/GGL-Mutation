@@ -22,7 +22,10 @@ from ggl_mutation import *
 
 
 class GGLMutationFeatures:
-    df_kernels = pd.read_csv('../kernels/kernels.csv')
+    abs_path = os.path.dirname(__file__)
+    rel_path = '../kernels/kernels.csv'
+    full_path = os.path.join(abs_path, rel_path)
+    df_kernels = pd.read_csv(full_path)
 
     def __init__(self, args):
 
@@ -59,7 +62,6 @@ class GGLMutationFeatures:
         for index in range(data_df.shape[0]):
             pdbid = pdbids[index]
             mutation = pdbid.split('_')
-
             chain, wildtype, mutanttype, residue_id = self.get_mutation_info(mutation)
 
             gglMut = GGLMutation(Kernel, chain, residue_id)

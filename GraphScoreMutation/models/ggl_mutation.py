@@ -14,7 +14,7 @@ Date last modified:
 
 import numpy as np
 import pandas as pd
-# 4import os
+import os
 # from os import listdir
 # from rdkit import Chem
 from scipy.spatial.distance import cdist
@@ -54,8 +54,10 @@ class KernelFunction:
 
 
 class GGLMutation:
-    protein_atom_types_df = pd.read_csv(
-        '../utils/protein_atom_types.csv')
+    abs_path = os.path.dirname(__file__)
+    rel_path = '../utils/protein_atom_types.csv'
+    full_path = os.path.join(abs_path, rel_path)
+    protein_atom_types_df = pd.read_csv(full_path)
 
     protein_atom_types = protein_atom_types_df['AtomType'].tolist()
     protein_atom_radii = protein_atom_types_df['Radius'].tolist()
@@ -64,6 +66,7 @@ class GGLMutation:
         i[0] + "-" + i[1] for i in product(protein_atom_types, protein_atom_types)]
 
     def __init__(self, Kernel, chain, residue_id):
+        # TODO: add constraints on parameter types
         self.Kernel = Kernel
 
         self.chain = chain
