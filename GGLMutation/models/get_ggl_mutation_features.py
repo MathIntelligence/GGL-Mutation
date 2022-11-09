@@ -48,6 +48,7 @@ class GGLMutationFeatures:
 
     # def ggl_mutation_score(self):
 
+
     def get_ggl_mutation_features(self, parameters):
 
         Kernel = KernelFunction(kernel_type=parameters['type'],
