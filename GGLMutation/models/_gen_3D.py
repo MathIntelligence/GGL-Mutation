@@ -108,10 +108,10 @@ class gen_3D:
         ID = mut_info['ID']
         pdb_file = pdbid+'.pdb'
         os.system(f'{profix} -fix 0 {dir_name}/{pdb_file}')
-        os.system(f'mv {pdbid}_fix.pdb {ID}.pdb')
+        os.system(f'mv {pdbid}_fix.pdb {ID}_wild.pdb')
 
         scapfile = open(f'{workdir}/tmp_scap.list', 'w')
-        scapfile.write(chainid+','+resid+','+mutname)
+        scapfile.write(f'{chainid},{resid},{mutname}')
         scapfile.close()   
         os.system(f'{scap} -ini 20 -min 4  {pdb_file} ./tmp_scap.list')
         os.system(f'mv {pdbid}_scap.pdb {ID}_mut.pdb')
@@ -127,19 +127,21 @@ class gen_3D:
         chainid = mut_info['chainid']
         resid = mut_info['resid']
         if wildtype:
-            pdbid = mut_info['ID']
+            pdbid = mut_info['ID'] + '_wild'
+            #pdbid = f'{pdbid}_wild'
         else:
             pdbid = mut_info['ID'] + '_mut'
+            #pdbid = f'{pdbid}_mut'
         tclname = 'def_site.tcl'
         filename = f'{pdbid}.pdb'
         b_name = pdbid +'_bindingsite.pdb'
-        m_name = pdbid +'_mutantsite.pdb'
+        m_name = pdbid +'_mutationsite.pdb'
         tclfile = open(tclname,'w')
         print(chainid)
         tclfile.write("mol new {" + filename +"} type {pdb} first 0 last 0 step 1 waitfor 1\n")
-        tclfile.write('set prot [atomselect top "within '+ str(cutoff) + ' of chain '+chainid+'"]\n')
+        tclfile.write(f'set prot [atomselect top "within {cutoff} of chain {chainid}"]\n')
         tclfile.write('$prot writepdb '+ b_name +'\n')
-        tclfile.write('set prot2 [atomselect top "within '+ str(cutoff) + ' of resid '+resid+' and chain '+chainid+'"]\n')
+        tclfile.write(f'set prot2 [atomselect top "within {cutoff} of resid {resid} and chain {chainid}"]\n')
         tclfile.write('$prot2 writepdb '+ m_name +'\n')
         tclfile.write('exit')
         tclfile.close()

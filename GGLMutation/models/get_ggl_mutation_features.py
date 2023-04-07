@@ -7,10 +7,11 @@ Author:
     Masud Rana (masud.rana@uky.edu)
 
 Date last modified:
-    Oct 4, 2022
+    Jan 25, 2023
 
 """
 
+import os
 import sys
 # import pandas as pd
 # from itertools import product
@@ -69,17 +70,14 @@ class GGLMutationFeatures:
 
             # file_folder = f'{pdbid}_{chain}_{wildtype}{residue_id}{mutanttype}'
 
-            sites = ['bindingsite', 'mutantsite']
+            sites = ['bindingsite', 'mutationsite']
             prot_types = ['wild', 'mut']
 
             count = 0
 
             for site in sites:
                 for prot in prot_types:
-                    if prot == 'wild':
-                        pdb_file = f'{self.data_folder}/{pdbid}/{pdbid}_{site}.pdb'
-                    else:
-                        pdb_file = f'{self.data_folder}/{pdbid}/{pdbid}_{prot}_{site}.pdb'
+                    pdb_file = f'{self.data_folder}/{pdbid}/{pdbid}_{prot}_{site}.pdb'
 
                     ggl_score = gglMut.get_site_specific_ggl_score(
                         pdb_file, site)
