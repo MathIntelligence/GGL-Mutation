@@ -1,0 +1,321 @@
+!delphi_charmm19.crg 
+ N    ALA    -0.350
+ CA   ALA     0.100
+ C    ALA     0.550
+ O    ALA    -0.550
+ CB   ALA     0.000
+ HN   ALA     0.250
+ HA   ALA     0.000
+1HB   ALA     0.000
+2HB   ALA     0.000
+3HB   ALA     0.000
+ N    CYS    -0.350
+ CA   CYS     0.100
+ C    CYS     0.550
+ O    CYS    -0.550
+ CB   CYS     0.190
+ SG   CYS    -0.190
+ HN   CYS     0.250
+ HA   CYS     0.000
+1HB   CYS     0.000
+2HB   CYS     0.000
+ N    ASP    -0.350
+ CA   ASP     0.100
+ C    ASP     0.550
+ O    ASP    -0.550
+ CB   ASP    -0.160
+ CG   ASP     0.360
+ OD1  ASP    -0.600
+ OD2  ASP    -0.600
+ HN   ASP     0.250
+ HA   ASP     0.000
+1HB   ASP     0.000
+2HB   ASP     0.000
+ N    GLU    -0.350
+ CA   GLU     0.100
+ C    GLU     0.550
+ O    GLU    -0.550
+ CB   GLU     0.000
+ CG   GLU    -0.160
+ CD   GLU     0.360
+ OE1  GLU    -0.600
+ OE2  GLU    -0.600
+ HN   GLU     0.250
+ HA   GLU     0.000
+1HB   GLU     0.000
+2HB   GLU     0.000
+1HG   GLU     0.000
+2HG   GLU     0.000
+ N    PHE    -0.350
+ CA   PHE     0.100
+ C    PHE     0.550
+ O    PHE    -0.550
+ CB   PHE     0.000
+ CG   PHE     0.000
+ CD1  PHE     0.000
+ CD2  PHE     0.000
+ CE1  PHE     0.000
+ CE2  PHE     0.000
+ CZ   PHE     0.000
+ HN   PHE     0.250
+ HA   PHE     0.000
+1HB   PHE     0.000
+2HB   PHE     0.000
+ HD1  PHE     0.000
+ HD2  PHE     0.000
+ HE1  PHE     0.000
+ HE2  PHE     0.000
+ HZ   PHE     0.000
+ N    GLY    -0.350
+ CA   GLY     0.100
+ C    GLY     0.550
+ O    GLY    -0.550
+ HN   GLY     0.250
+1HA   GLY     0.000
+2HA   GLY     0.000
+ N    HIS    -0.350
+ CA   HIS     0.100
+ C    HIS     0.550
+ O    HIS    -0.550
+ CB   HIS     0.000
+ CG   HIS     0.100
+ ND1  HIS    -0.400
+ CD2  HIS     0.100
+ CE1  HIS     0.300
+ NE2  HIS    -0.400
+ HN   HIS     0.250
+ HA   HIS     0.000
+1HB   HIS     0.000
+2HB   HIS     0.000
+ HD1  HIS     0.300
+ HD2  HIS     0.000
+ HE1  HIS     0.000
+ N    ILE    -0.350
+ CA   ILE     0.100
+ C    ILE     0.550
+ O    ILE    -0.550
+ CB   ILE     0.000
+ CG1  ILE     0.000
+ CG2  ILE     0.000
+ CD1  ILE     0.000
+ HN   ILE     0.250
+ HA   ILE     0.000
+ HB   ILE     0.000
+1HG1  ILE     0.000
+2HG1  ILE     0.000
+1HG2  ILE     0.000
+2HG2  ILE     0.000
+3HG2  ILE     0.000
+1HD1  ILE     0.000
+2HD1  ILE     0.000
+3HD1  ILE     0.000
+ N    LYS    -0.350
+ CA   LYS     0.100
+ C    LYS     0.550
+ O    LYS    -0.550
+ CB   LYS     0.000
+ CG   LYS     0.000
+ CD   LYS     0.000
+ CE   LYS     0.250
+ NZ   LYS    -0.300
+ HN   LYS     0.250
+ HA   LYS     0.000
+1HB   LYS     0.000
+2HB   LYS     0.000
+1HG   LYS     0.000
+2HG   LYS     0.000
+1HD   LYS     0.000
+2HD   LYS     0.000
+1HE   LYS     0.000
+2HE   LYS     0.000
+1HZ   LYS     0.350
+2HZ   LYS     0.350
+3HZ   LYS     0.350
+ N    LEU    -0.350
+ CA   LEU     0.100
+ C    LEU     0.550
+ O    LEU    -0.550
+ CB   LEU     0.000
+ CG   LEU     0.000
+ CD1  LEU     0.000
+ CD2  LEU     0.000
+ HN   LEU     0.250
+ HA   LEU     0.000
+1HB   LEU     0.000
+2HB   LEU     0.000
+ HG   LEU     0.000
+1HD1  LEU     0.000
+2HD1  LEU     0.000
+3HD1  LEU     0.000
+1HD2  LEU     0.000
+2HD2  LEU     0.000
+3HD2  LEU     0.000
+ N    MET    -0.350
+ CA   MET     0.100
+ C    MET     0.550
+ O    MET    -0.550
+ CB   MET     0.000
+ CG   MET     0.060
+ SD   MET    -0.120
+ CE   MET     0.060
+ HN   MET     0.250
+ HA   MET     0.000
+1HB   MET     0.000
+2HB   MET     0.000
+1HG   MET     0.000
+2HG   MET     0.000
+1HE   MET     0.000
+2HE   MET     0.000
+3HE   MET     0.000
+ N    ASN    -0.350
+ CA   ASN     0.100
+ C    ASN     0.550
+ O    ASN    -0.550
+ CB   ASN     0.000
+ CG   ASN     0.550
+ OD1  ASN    -0.550
+ ND2  ASN    -0.600
+ HN   ASN     0.250
+ HA   ASN     0.000
+1HB   ASN     0.000
+2HB   ASN     0.000
+1HD2  ASN     0.300
+2HD2  ASN     0.300
+ N    PRO    -0.200
+ CA   PRO     0.100
+ C    PRO     0.550
+ O    PRO    -0.550
+ CB   PRO     0.000
+ CG   PRO     0.000
+ CD   PRO     0.100
+ HA   PRO     0.000
+1HB   PRO     0.000
+2HB   PRO     0.000
+1HG   PRO     0.000
+2HG   PRO     0.000
+1HD   PRO     0.000
+2HD   PRO     0.000
+ N    GLN    -0.350
+ CA   GLN     0.100
+ C    GLN     0.550
+ O    GLN    -0.550
+ CB   GLN     0.000
+ CG   GLN     0.000
+ CD   GLN     0.550
+ OE1  GLN    -0.550
+ NE2  GLN    -0.600
+ HN   GLN     0.250
+ HA   GLN     0.000
+1HB   GLN     0.000
+2HB   GLN     0.000
+1HG   GLN     0.000
+2HG   GLN     0.000
+1HE2  GLN     0.300
+2HE2  GLN     0.300
+ N    ARG    -0.350
+ CA   ARG     0.100
+ C    ARG     0.550
+ O    ARG    -0.550
+ CB   ARG     0.000
+ CG   ARG     0.000
+ CD   ARG     0.100
+ NE   ARG    -0.400
+ CZ   ARG     0.500
+ NH1  ARG    -0.450
+ NH2  ARG    -0.450
+ HN   ARG     0.250
+ HA   ARG     0.000
+1HB   ARG     0.000
+2HB   ARG     0.000
+1HG   ARG     0.000
+2HG   ARG     0.000
+1HD   ARG     0.000
+2HD   ARG     0.000
+ HE   ARG     0.300
+1HH1  ARG     0.350
+2HH1  ARG     0.350
+1HH2  ARG     0.350
+2HH2  ARG     0.350
+ N    SER    -0.350
+ CA   SER     0.100
+ C    SER     0.550
+ O    SER    -0.550
+ CB   SER     0.250
+ OG   SER    -0.250
+ HN   SER     0.250
+ HA   SER     0.000
+1HB   SER     0.000
+2HB   SER     0.000
+ N    THR    -0.350
+ CA   THR     0.100
+ C    THR     0.550
+ O    THR    -0.550
+ CB   THR     0.250
+ OG1  THR    -0.250
+ CG2  THR     0.000
+ HN   THR     0.250
+ HA   THR     0.000
+ HB   THR     0.000
+1HG2  THR     0.000
+2HG2  THR     0.000
+3HG2  THR     0.000
+ N    VAL    -0.350
+ CA   VAL     0.100
+ C    VAL     0.550
+ O    VAL    -0.550
+ CB   VAL     0.000
+ CG1  VAL     0.000
+ CG2  VAL     0.000
+ HN   VAL     0.250
+ HA   VAL     0.000
+ HB   VAL     0.000
+1HG1  VAL     0.000
+2HG1  VAL     0.000
+3HG1  VAL     0.000
+1HG2  VAL     0.000
+2HG2  VAL     0.000
+3HG2  VAL     0.000
+ N    TRP    -0.350
+ CA   TRP     0.100
+ C    TRP     0.550
+ O    TRP    -0.550
+ CB   TRP     0.000
+ CG   TRP    -0.030
+ CD1  TRP     0.060
+ CD2  TRP     0.100
+ NE1  TRP    -0.360
+ CE2  TRP    -0.040
+ CE3  TRP    -0.030
+ CZ2  TRP     0.000
+ CZ3  TRP     0.000
+ CH2  TRP     0.000
+ HN   TRP     0.250
+ HA   TRP     0.000
+1HB   TRP     0.000
+2HB   TRP     0.000
+ HD1  TRP     0.000
+ HE1  TRP     0.300
+ HE3  TRP     0.000
+ HZ2  TRP     0.000
+ HZ3  TRP     0.000
+ HH2  TRP     0.000
+ N    TYR    -0.350
+ CA   TYR     0.100
+ C    TYR     0.550
+ O    TYR    -0.550
+ CB   TYR     0.000
+ CG   TYR     0.000
+ CD1  TYR     0.000
+ CD2  TYR     0.000
+ CE1  TYR     0.000
+ CE2  TYR     0.000
+ CZ   TYR     0.250
+ OH   TYR    -0.250
+ HN   TYR     0.250
+ HA   TYR     0.000
+1HB   TYR     0.000
+2HB   TYR     0.000
+ HD1  TYR     0.000
+ HD2  TYR     0.000
+ HE1  TYR     0.000
+ HE2  TYR     0.000

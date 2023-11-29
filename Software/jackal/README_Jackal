@@ -1,0 +1,32 @@
+	
+	Installation:
+
+	1. cd fasp, run "mymake"
+	2. cd bin,  compile "mk.c" using "g++ -o mk mk.c"
+	3. run "mk g++ nest" to get nest executable
+	   run "mk g++ loopy" to get loopy executable
+	   run "mk g++ scap" to get scap executable
+	   ............
+
+
+	Set up running environments:
+	1. edit your .cshrc file, add one line to denote the jackal
+	   installation directory (e.g.) 
+	   setenv JACKALDIR /raid1/1/jiang/jackal
+	2. copy file "jackal.dir" from JACKALDIR/bin to your working 
+	   directory, edit it, change the directories (e.g.)
+
+	   my jackal.dir file:
+pdb: .
+     /razor/0/databases/modpdb
+     /razor/0/databases/pdb/
+library: /raid1/1/jiang/jackal/library
+key:XIANG2002
+
+
+
+	Run jackal
+	go to your working directory, for nest, first simply type 
+	xxx/xxx/nest, it itself will tell you the format
+
+

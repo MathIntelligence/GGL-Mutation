@@ -1,0 +1,15 @@
+! default extended atom radii based loosely
+! on mike connolly's MS program- note H's are 0
+!program assign charge,radius and epsln to nonstandard amino acids
+!123456789012345678901234567890123456789
+!atom__res__resid__charge__radius__epslon
+P      A           -1.00   1.90    -0.45    
+P      G           -1.00   1.90    -0.45
+P      C           -1.00   1.90    -0.45
+P      T           -1.00   1.90    -0.45   
+CU                  1.00   1.25    -0.04  
+ZN                  1.00   1.09    -0.04
+FE                  1.00   1.95    -0.04
+MN                  1.00   1.20    -0.04
+MG                  1.00   1.86    -0.04 
+
