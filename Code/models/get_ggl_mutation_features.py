@@ -7,14 +7,14 @@ Author:
     Masud Rana (masud.rana@uky.edu)
 
 Date last modified:
-    Jan 25, 2023
+    Nov 28, 2023
 
 """
 
 import os
 import sys
-# import pandas as pd
-# from itertools import product
+import pandas as pd
+from itertools import product
 import ntpath
 import argparse
 import time
@@ -43,11 +43,14 @@ class GGLMutationFeatures:
         wildtype = mutation[2][0]
         mutanttype = mutation[2][-1]
         resid = mutation[2][1:-1]
-        resid = int(resid)
+        try:
+            resid = int(resid)
+        except:
+            insertion = resid[-1]
+            resid = resid[:-1]
+            resid = int(resid)
 
         return chain, wildtype, mutanttype, resid
-
-    # def ggl_mutation_score(self):
 
 
     def get_ggl_mutation_features(self, parameters):
@@ -71,12 +74,14 @@ class GGLMutationFeatures:
             # file_folder = f'{pdbid}_{chain}_{wildtype}{residue_id}{mutanttype}'
 
             sites = ['bindingsite', 'mutationsite']
+            # sites = ['bindingsite', 'mutantsite']
             prot_types = ['wild', 'mut']
 
             count = 0
 
             for site in sites:
                 for prot in prot_types:
+
                     pdb_file = f'{self.data_folder}/{pdbid}/{pdbid}_{prot}_{site}.pdb'
 
                     ggl_score = gglMut.get_site_specific_ggl_score(
@@ -132,7 +137,7 @@ def get_args(args):
     parser = argparse.ArgumentParser(description="Get GGL Mutation Features")
 
     parser.add_argument('-k', '--kernel-index', help='Kernel Index (see kernels/kernels.csv)',
-                        type=int)
+                        type=int, default=84)
 
     parser.add_argument('-f', '--dataset',
                         help='path to CSV dataset')

@@ -8,22 +8,18 @@ Author:
     Masud Rana (masud.rana@uky.edu)
 
 Date last modified:
-    Oct 4, 2022
+    Nov 25, 2022
 
 """
 
 import numpy as np
 import pandas as pd
-import os
-# from os import listdir
-# from rdkit import Chem
+
 from scipy.spatial.distance import cdist
 from itertools import product
-# from rdkit.ML.Descriptors.MoleculeDescriptors import MolecularDescriptorCalculator
+from rdkit.ML.Descriptors.MoleculeDescriptors import MolecularDescriptorCalculator
 from biopandas.pdb import PandasPdb
-
-
-# from biopandas.mol2 import PandasMol2
+from biopandas.mol2 import PandasMol2
 
 
 class KernelFunction:
@@ -43,30 +39,27 @@ class KernelFunction:
             return self.lorentz_kernel
 
     def exponential_kernel(self, d, vdw_radii):
-        eta = self.tau * vdw_radii
+        eta = self.tau*vdw_radii
 
-        return np.exp(-(d / eta) ** self.kappa)
+        return np.exp(-(d/eta)**self.kappa)
 
     def lorentz_kernel(self, d, vdw_radii):
-        eta = self.tau * vdw_radii
+        eta = self.tau*vdw_radii
 
-        return 1 / (1 + (d / eta) ** self.kappa)
+        return 1/(1+(d/eta)**self.kappa)
 
 
 class GGLMutation:
-    abs_path = os.path.dirname(__file__)
-    rel_path = '../utils/protein_atom_types.csv'
-    full_path = os.path.join(abs_path, rel_path)
-    protein_atom_types_df = pd.read_csv(full_path)
+    protein_atom_types_df = pd.read_csv(
+        '../utils/protein_atom_types.csv')
 
     protein_atom_types = protein_atom_types_df['AtomType'].tolist()
     protein_atom_radii = protein_atom_types_df['Radius'].tolist()
 
     protein_atom_type_pair = [
-        i[0] + "-" + i[1] for i in product(protein_atom_types, protein_atom_types)]
+        i[0]+"-"+i[1] for i in product(protein_atom_types, protein_atom_types)]
 
     def __init__(self, Kernel, chain, residue_id):
-        # TODO: add constraints on parameter types
         self.Kernel = Kernel
 
         self.chain = chain
@@ -79,13 +72,12 @@ class GGLMutation:
         protein_atom_radii_dict = {a: r for (a, r) in zip(
             self.protein_atom_types, self.protein_atom_radii)}
 
-        pairwise_atom_type_radii = {i[0] + "-" + i[1]: protein_atom_radii_dict[i[0]] +
-                                                       protein_atom_radii_dict[i[1]] for i in
-                                    product(self.protein_atom_types, self.protein_atom_types)}
+        pairwise_atom_type_radii = {i[0]+"-"+i[1]: protein_atom_radii_dict[i[0]] +
+                                    protein_atom_radii_dict[i[1]] for i in product(self.protein_atom_types, self.protein_atom_types)}
 
         return pairwise_atom_type_radii
 
-    def pdb_to_df(self, pdb_file: str) -> pd.DataFrame:
+    def pdb_to_df(self, pdb_file):
         ppdb = PandasPdb()
         ppdb.read_pdb(pdb_file)
         ppdb_all_df = ppdb.df['ATOM']
@@ -113,16 +105,17 @@ class GGLMutation:
 
     def mutation_site_atoms(self, protein_df):
         protein_1 = protein_df[(protein_df['CHAIN'] == self.chain) & (
-                protein_df['RESIDUE_ID'] == self.residue_id)]
+            protein_df['RESIDUE_ID'] == self.residue_id)]
 
         protein_2 = protein_df.loc[~protein_df.index.isin(protein_1.index)]
 
         return protein_1, protein_2
 
-    def get_mwcg_rep(self, protein_1: pd.DataFrame, protein_2: pd.DataFrame) -> pd.DataFrame:
+
+    def get_mwcg_rep(self, protein_1, protein_2):
         atom_pairs = list(
             product(protein_1['ATOM_NAME'], protein_2['ATOM_NAME']))
-        atom_pairs = [x[0] + "-" + x[1] for x in atom_pairs]
+        atom_pairs = [x[0]+"-"+x[1] for x in atom_pairs]
         pairwise_radii = [self.pairwise_atom_type_radii[x]
                           for x in atom_pairs]
         pairwise_radii = np.asarray(pairwise_radii)
@@ -144,16 +137,15 @@ class GGLMutation:
 
         return pairwise_mwcg
 
-    def get_site_specific_mwcg(self, pdb_file, site):
-        prot_df = self.pdb_to_df(pdb_file)
 
+    def get_site_specific_mwcg(self, pdb_file, site):
+
+        prot_df = self.pdb_to_df(pdb_file)
+    
         if site[0] in ['b', 'B']:
             prot1, prot2 = self.binding_site_atoms(prot_df)
         elif site[0] in ['m', 'M']:
             prot1, prot2 = self.mutation_site_atoms(prot_df)
-        else:
-            # Need a better control here
-            return False
 
         ssMWCG = self.get_mwcg_rep(prot1, prot2)
 
@@ -186,7 +178,13 @@ class GGLMutation:
 
         return ggl_score
 
-    # def get_ggl_mutation_score(self, prot_wild, prot_mutant):
 
-    #     #get site-specific MWCG for both wild and mutant protein
-    #     ssmwcg = self.get_site_specific_mwcg(prot_df)
+        
+
+
+
+
+
+
+
+
